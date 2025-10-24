@@ -10,14 +10,15 @@ package ejercicio_2;
  */
 public class Main {
     public static void main(String[] args) {
-        Circulo circulo1 = new Circulo(3.0);
-        Rectangulo rectangulo1 = new Rectangulo(4.0, 2.5);
-        Circulo circulo2 = new Circulo(1.5);
-        Rectangulo rectangulo2 = new Rectangulo(10.0, 1.2);
+        Figura[] figuras = {
+            new Circulo(3.0),
+            new Rectangulo(4.0, 2.5),
+            new Circulo(1.5),
+            new Rectangulo(10.0, 1.2)
+        };
 
-        System.out.println("Area del circulo1: " + circulo1.calcularArea());
-        System.out.println("Area del rectangulo1: " + rectangulo1.calcularArea());
-        System.out.println("Area del circulo2: " + circulo2.calcularArea());
-        System.out.println("Area del rectangulo2: " + rectangulo2.calcularArea());
+        for (Figura f : figuras) {
+            System.out.println(f.getClass().getSimpleName() + " -> Área: " + f.calcularArea());
+        }
     }
 }

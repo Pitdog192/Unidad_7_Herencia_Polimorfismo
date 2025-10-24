@@ -9,12 +9,20 @@ package ejercicio_1;
  * @author Arroquigarays
  */
 public class Main {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // Instanciar un auto y mostrar su información
+        Auto miAuto = new Auto("Renault", "Sandero Stepway", 3);
+
+        // upcasting a Vehiculo
+        Vehiculo v = miAuto;
+
+        // Llamada dinámica: ejecuta mostrarInfo() de Auto gracias a @Override
+        v.mostrarInfo();
+
+        // downcasting seguro
+        if (v instanceof Auto) {
+            Auto a = (Auto) v; // downcasting
+            System.out.println("Características del auto: " + a.getCantidadPuertas());
+        }
     }
-    
 }
